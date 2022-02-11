@@ -1,3 +1,6 @@
+// works for ui-react 2.0.0
+// check https://ui.docs.amplify.aws/
+
 import { Amplify } from 'aws-amplify';
 
 import { Authenticator } from '@aws-amplify/ui-react';
