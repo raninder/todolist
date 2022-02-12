@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "amplifyreactapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/reenagill/lighthouse/react/amplify-react-app/amplify/backend/api/amplifyreactapp/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authamplifyreactapp300dfa02"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
+  }
+}
