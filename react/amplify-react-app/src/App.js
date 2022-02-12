@@ -17,9 +17,10 @@ export default function App() {
 const fetchSongs = async () => {
     try {
         const songData = await API.graphql(graphqlOperation(listSongs));
-        const songList = songData.data.listSongs.items;
-        console.log('song list', songList);
-        setSongs(songList);
+				console.log('song Data', songData);
+        // const songList = songData.data.listSongs.items;
+        // console.log('song list', songList);
+        // setSongs(songList);
     } catch (error) {
         console.log('error on fetching songs', error);
     }

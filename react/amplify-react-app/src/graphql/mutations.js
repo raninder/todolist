@@ -1,5 +1,14 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
+// mutation CreateBlog {
+//   createBlog(input: {
+//     name: "My New Blog!"
+//   }) {
+//     id
+//     name
+//   }
+// }
+
 
 export const createSong = /* GraphQL */ `
   mutation CreateSong(
