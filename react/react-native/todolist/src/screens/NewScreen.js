@@ -4,9 +4,10 @@ import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-elements';
 import { Button } from 'react-native-elements/dist/buttons/Button';
 import { Input } from 'react-native-elements/dist/input/Input';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 export default function NewScreen () {
-
+	const { getItem, setItem } = useAsyncStorage('todo');
   function newTask (values) {
 	//TODO save new task
   }

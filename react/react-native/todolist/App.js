@@ -6,7 +6,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import NewScreen from './src/screens/NewScreen';
 import { StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
-
+import Toast from 'react-native-toast-message';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +39,7 @@ export default function App() {
         <Stack.Screen name="New" component={NewScreen} />
 
       </Stack.Navigator>
+      <Toast ref={(ref) => Toast.setRef(ref)} />
     </NavigationContainer>
   );
 }
