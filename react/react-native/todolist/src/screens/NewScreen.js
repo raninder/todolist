@@ -6,11 +6,51 @@ import { Button } from 'react-native-elements/dist/buttons/Button';
 import { Input } from 'react-native-elements/dist/input/Input';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
-export default function NewScreen () {
+export default function NewScreen ({ navigation }) {
 	const { getItem, setItem } = useAsyncStorage('todo');
   function newTask (values) {
-	//TODO save new task
+    if (!values.title) {
+      Toast.show({
+        type: 'error',
+        text1: 'Title is required',
+        position: 'top'
+      });
+      return;
+    }
+    //get todo array from storage
+    getItem()
+      .then((todoJSON) => {
+        let todo = todoJSON ? JSON.parse(todoJSON) : [];
+        //add a new item to the list
+        todo.push({
+          id: uuid.v4(),
+          title: values.title
+        });
+
+        //set item in storage again
+        setItem(JSON.stringify(todo))
+          .then(() => {
+            //navigate back to home screen
+            navigation.goBack();
+          }).catch((err) => {
+            console.error(err);
+            Toast.show({
+              type: 'error',
+              text1: 'An error occurred and a new item could not be saved',
+              position: 'top'
+            });
+          });
+      })
+      .catch((err) => {
+        console.error(err);
+        Toast.show({
+          type: 'error',
+          text1: 'An error occurred and a new item could not be saved',
+          position: 'bottom'
+        });
+      });
   }
+
 
   return (
     <Formik
