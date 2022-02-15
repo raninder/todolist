@@ -5,6 +5,7 @@ import { Text } from 'react-native-elements';
 import { Button } from 'react-native-elements/dist/buttons/Button';
 import { Input } from 'react-native-elements/dist/input/Input';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import uuid from 'react-native-uuid'
 
 export default function NewScreen ({ navigation }) {
 	const { getItem, setItem } = useAsyncStorage('todo');
